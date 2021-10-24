@@ -6,7 +6,7 @@ use strict;
 use warnings;
 use Crypt::Eksblowfish::Bcrypt ();
 use Crypt::URandom ();
-use Sub::Name 'subname';
+use Sub::Name ();
 
 use parent 'DBIx::Class';
 
@@ -50,7 +50,7 @@ sub _inject_check_method {
   my ($self, $check_name, $check_subref) = @_;
 
   no strict 'refs';
-  *$check_name = subname $check_name => $check_subref;
+  *$check_name = Sub::Name::subname $check_name => $check_subref;
 }
 
 sub bcrypt  {

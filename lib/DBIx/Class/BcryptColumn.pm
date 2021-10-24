@@ -115,7 +115,7 @@ sub update {
 
 =head1 NAME
 
-DBIx::Class::BcryptColumn - Set a column to hash on insert/update using bcrypt
+DBIx::Class::BcryptColumn - Set a column to securely hash on insert/update using bcrypt
 
 =head1 SYNOPSIS
 

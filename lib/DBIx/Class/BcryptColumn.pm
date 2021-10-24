@@ -162,7 +162,7 @@ I have set should be sufficient to protect you against all but nation state leve
 tweak the defaults a bit to make it a harder algorithm at a higher performance cost.  The other popular
 modules mentioned above support a lot of different hashing approaches and if you are not schooled
 in security its very easy to accidentally choose a configuration that is not secure. With this
-module its very easy to get a setup that is considered secure today (just follow the L<\SYNOPSIS>).
+module its very easy to get a setup that is considered secure today (just follow the L</SYNOPSIS>).
 If for some reason bcrypt becomes no longer considered secure I will mark this distribution as deprecated.
 
 B<NOTE>: When using this with L<DBIx::Class::Valiant> you should add it AFTER adding the L<DBIx::Class::Valiant::Result>
@@ -216,7 +216,9 @@ This component contains the following public methods.
 
 Returns an array of columns marked to be hashed.
 
-=head2 bcrypt ($value, $cost)
+=head2 bcrypt
+
+Arguments: ($value, $cost)
 
 Returns a hashed version of C<$value> using L<Crypt::Eksblowfish::Bcrypt>.  This is used internally
 by the component to hash columns but I've exposed it as a public method since you might find it
@@ -227,7 +229,9 @@ useful to have in your code.
 Returns the default cost we use for C<bcrypt>.  This is 16 unless you override. If you want a bigger cost
 its best to set this via column level configuration.
 
-=head2 generate_salt ($size).
+=head2 generate_salt
+
+Arguments ($size).
 
 Returns a salt suitable for using with C<bcrypt>.  You might like to have access to this for things like
 creating tokens.  The default $size is 16, which should not be changed for salts that are used with bcrypt

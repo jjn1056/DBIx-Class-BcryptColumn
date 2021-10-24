@@ -47,7 +47,7 @@ I have set should be sufficient to protect you against all but nation state leve
 tweak the defaults a bit to make it a harder algorithm at a higher performance cost.  The other popular
 modules mentioned above support a lot of different hashing approaches and if you are not schooled
 in security its very easy to accidentally choose a configuration that is not secure. With this
-module its very easy to get a setup that is considered secure today (just follow the [\\SYNOPSIS](https://metacpan.org/pod/%5CSYNOPSIS)).
+module its very easy to get a setup that is considered secure today (just follow the ["SYNOPSIS"](#synopsis)).
 If for some reason bcrypt becomes no longer considered secure I will mark this distribution as deprecated.
 
 **NOTE**: When using this with [DBIx::Class::Valiant](https://metacpan.org/pod/DBIx%3A%3AClass%3A%3AValiant) you should add it AFTER adding the [DBIx::Class::Valiant::Result](https://metacpan.org/pod/DBIx%3A%3AClass%3A%3AValiant%3A%3AResult)
@@ -97,7 +97,9 @@ This component contains the following public methods.
 
 Returns an array of columns marked to be hashed.
 
-## bcrypt ($value, $cost)
+## bcrypt
+
+Arguments: ($value, $cost)
 
 Returns a hashed version of `$value` using [Crypt::Eksblowfish::Bcrypt](https://metacpan.org/pod/Crypt%3A%3AEksblowfish%3A%3ABcrypt).  This is used internally
 by the component to hash columns but I've exposed it as a public method since you might find it
@@ -108,7 +110,9 @@ useful to have in your code.
 Returns the default cost we use for `bcrypt`.  This is 16 unless you override. If you want a bigger cost
 its best to set this via column level configuration.
 
-## generate\_salt ($size).
+## generate\_salt
+
+Arguments ($size).
 
 Returns a salt suitable for using with `bcrypt`.  You might like to have access to this for things like
 creating tokens.  The default $size is 16, which should not be changed for salts that are used with bcrypt

@@ -196,7 +196,7 @@ This component permits the following configuration.  Example usage:
 
 =item cost
 
-Defaults to 16.  You can use this to change the cost used to generate the hash.  I don't recommend using
+Defaults to 12.  You can use this to change the cost used to generate the hash.  I don't recommend using
 a smaller value; using a higher one might cause performance issues on equipment commonly available in
 late 2021 when this module was written.
 
@@ -226,7 +226,7 @@ useful to have in your code.
 
 =head2 default_cost
 
-Returns the default cost we use for C<bcrypt>.  This is 16 unless you override. If you want a bigger cost
+Returns the default cost we use for C<bcrypt>.  This is 12 unless you override. If you want a bigger cost
 its best to set this via column level configuration.
 
 =head2 generate_salt

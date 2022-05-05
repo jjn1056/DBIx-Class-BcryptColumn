@@ -1,6 +1,6 @@
 package DBIx::Class::BcryptColumn;
 
-our $VERSION = '0.001001';
+our $VERSION = '0.001003';
 
 use strict;
 use warnings;
